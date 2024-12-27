@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Planet Points</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+    <link rel="stylesheet" href="styles.css" >
+  </head>
+  <body>
+    <nav>
+      <a href="#home" class="logo"
+        >Planetlər<span class="text-yellow fw-700">Aləmi</span></a
+      >
+
+      <div
+        class="hamburger-menu"
+        id="hamburgerMenu"
+        onclick="showMobileMenu()"
+      ></div>
+
+      <div class="mobileMenu" id="mobileMenu">
+        <div class="top-section">
+          <a href="#solar-system" class="nav-link" onclick="resetMobileMenu()"
+            >Günəş sistemi</a
+          >
+
+          <a href="#apollo11" class="nav-link" onclick="resetMobileMenu()"
+            >Apollo 11</a
+          >
+
+          <a href="#metrics" class="nav-link" onclick="resetMobileMenu()"
+            >Planet ölçüləri</a
+          >
+        </div>
+
+        <div class="bottom-section">
+          <ul>
+            <li
+              onclick="currentSlide(1) ; moveToPlanetCarousel() ; resetMobileMenu()"
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('mercury-info')"
+                >Merkuri</a
+              >
+            </li>
+
+            <li
+              onclick="currentSlide(2) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('venus-info')"
+                >Venera</a
+              >
+            </li>
+
+            <li
+              onclick="currentSlide(3) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('earth-info')"
+                >Yer</a
+              >
+            </li>
+
+            <li
+              onclick="currentSlide(4) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('mars-info')"
+                >Mars
+              </a>
+            </li>
+
+            <li
+              onclick="currentSlide(5) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('jupiter-info')"
+                >Yupiter
+              </a>
+            </li>
+
+            <li
+              onclick="currentSlide(6) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('saturn-info')"
+                >Saturn</a
+              >
+            </li>
+
+            <li
+              onclick="currentSlide(7) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('uranus-info')"
+                >Uran</a
+              >
+            </li>
+
+            <li
+              onclick="currentSlide(8) ;  moveToPlanetCarousel(); resetMobileMenu() "
+            >
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('neptune-info')"
+                >Neptun</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-list">
+        <a href="#solar-system" class="nav-link" onclick="resetDropdown()"
+          > Günəş sistemi</a
+        >
+
+        <a href="#apollo11" class="nav-link" onclick="resetDropdown()"
+          >Apollo 11</a
+        >
+
+        <a href="#metrics" class="nav-link" onclick="resetDropdown()"
+          >Planet ölçüləri</a
+        >
+
+        <details>
+          <summary class="planets-dropdown fw-300">Planetlər</summary>
+          <ul>
+            <li onclick="currentSlide(1) ; moveToPlanetCarousel()">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('mercury-info')"
+                >Merkuri</a
+              >
+            </li>
+
+            <li onclick="currentSlide(2) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('venus-info')"
+                >Venera</a
+              >
+            </li>
+
+            <li onclick="currentSlide(3) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('earth-info')"
+                >Yer</a
+              >
+            </li>
+
+            <li onclick="currentSlide(4) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('mars-info')"
+                >Mars
+              </a>
+            </li>
+
+            <li onclick="currentSlide(5) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('jupiter-info')"
+                >Yupiter
+              </a>
+            </li>
+
+            <li onclick="currentSlide(6) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('saturn-info')"
+                >Saturn</a
+              >
+            </li>
+
+            <li onclick="currentSlide(7) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('uranus-info')"
+                >Uran</a
+              >
+            </li>
+
+            <li onclick="currentSlide(8) ;  moveToPlanetCarousel() ">
+              <i class="fa-solid fa-shuttle-space"></i>
+              <a
+                href="#planet-carousel"
+                class="nav-link"
+                onclick="viewFacts('neptune-info')"
+                >Neptun</a
+              >
+            </li>
+          </ul>
+        </details>
+      </div>
+    </nav>
+    <header id="home" onclick="resetDropdown()">
+      <div class="carousel" id="planet-carousel">
+       
+        <a  class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a    class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Merkuri</h2>
+            <h3 class="sub-title fw-300 text-yellow">Ən Kiçik Planet</h3>
+            <p class="content">
+              Merkuri Günəş Sistemindəki ən kiçik planetdir və Günəşə ən yaxın olanıdır. Onun Günəş ətrafında dövr etməsi 87,97 Yer günü çəkir ki, bu da Günəşin bütün planetləri arasında ən qısa dövrüdür. Merkuri Günəş Sistemində bənzərsiz şəkildə dövr edir. Onun orbitin ekssentrikliyi Günəş Sistemi üzrə məlum olan bütün planetlər arasında ən böyüyüdür.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('mercury-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet mercury"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Venera</h2>
+            <h3 class="sub-title fw-300 text-yellow">Ən İsti Planet</h3>
+            <p class="content">
+              Günəşdən ikinci planetdir. Romalı sevgi və gözəllik tanrıçası olan Venusdan adını alır. Venus yer kürəsi kimi torpaq planetidir və bəzən Yer kürəsinin "bacı planeti" adlandırılır, çünki ölçüsü, kütləsi, Günəşə yaxınlığı və ümumi tərkibi baxımından oxşardır. Səma obyektləri arasında ən parlaq olanlardan biri olan Venus, qeydlərin mövcud olduğu hər dövrdən bəri insan mədəniyyətində əhəmiyyətli bir yer tutmuşdur.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('venus-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet venus"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Yer</h2>
+            <h3 class="sub-title fw-300 text-yellow">Həyatın olduğu planet </h3>
+            <p class="content">
+              Günəşdən üçüncü planet və həyatın mövcud olduğu yeganə astronomik obyekt Yerdir. O, Günəş Sistemindəki ən sıx planetdir. Dörd daşlı planetdən ən böyüyü və ən kütləlisidir. Yer bir daimi təbii peyki olan Ay ilə dövr edir. Yerin atmosferi əsasən azot və oksigendən ibarətdir. Yer 4,5 milyard ildən daha əvvəl yaranmışdır.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('earth-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet earth"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Mars</h2>
+            <h3 class="sub-title fw-300 text-yellow">Qırmızı Planet</h3>
+            <p class="content">
+              Günəşdən dördüncü planet və Günəş Sistemindəki ikinci ən kiçik planet Marsdır. Marsın günləri və fəsilləri Yerinkilərə bənzəyir, çünki onun dövr etmə müddəti və dövrə mühərrik oxunun ekvatora nisbətən əyilməsi oxşardır. Mars, Günəş Sistemindəki ən böyük vulkan olan və ən hündür tanınan dağ olan Olympus Monsun yerləşdiyi yerdir. Marsın iki peyki var: Phobos və Deimos, bunlar kiçik və qeyri-mütənasib formalıdır.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('mars-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet mars"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Yupiter</h2>
+            <h3 class="sub-title fw-300 text-yellow">Qazlardan ibarət planet </h3>
+            <p class="content">
+              Günəşdən beşinci planet və Günəş Sistemindəki ən böyük planet Yupiterdir. Yupiter, Ay və Venusdan sonra Yerin gecə səmasında ən parlaq üçüncü təbii obyekt olaraq tanınır. O, qaz nəhəngi olaraq, Günəş Sistemindəki digər bütün planetlərin cəmindən daha iki buçuk dəfə ağırdır. Yupiterdəki Böyük Qırmızı Ləkə, ən azından 17-ci əsrdən bəri mövcud olduğu məlum olan böyük bir fırtına olaraq tanınır, çünki teleskoplarla ilk dəfə ona baxıldığı vaxtdan bəri müşahidə edilmişdir.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('jupiter-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet jupiter"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Saturn</h2>
+            <h3 class="sub-title fw-300 text-yellow">Halqalı Planet</h3>
+            <p class="content">
+              Günəşdən altıncı planet və Günəş Sistemindəki Yupiterdən sonra ikinci ən böyük planet olan Saturnun ən diqqətəlayiq xüsusiyyəti, əsasən buz hissəciklərindən ibarət olan, kiçik bir miqdarda daş və toz ilə qarışmış möhtəşəm halqa sistemidir. Saturnun ən böyük peyki olan Titan, həmçinin Günəş Sistemindəki ikinci ən böyük aydır və Merkuridən böyükdür, amma daha az kütləyə malikdir. Titan, Günəş Sistemindəki tək aydır ki, əhəmiyyətli bir atmosferə sahibdir.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('saturn-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="saturn"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Uran</h2>
+            <h3 class="sub-title fw-300 text-yellow">Ən soyuq planet</h3>
+            <p class="content">
+              Günəşdən yeddinci planet olan Uran, Günəş Sistemindəki üçüncü ən böyük diametrə sahibdir. Uran 1781-ci ildə astronom William Herschel tərəfindən kəşf edilib, ancaq o, əvvəlcə onu ya komet, ya da ulduz olaraq düşünmüşdü. Uran, tərkibcə Neptuna bənzəyir və hər ikisinin kütləvi kimyəvi tərkibləri, daha böyük qaz nəhəngləri olan Yupiter və Saturndan fərqlənir.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('uranus-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet uranus"></figure>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="description slideUp">
+            <h2 class="title">Neptun</h2>
+            <h3 class="sub-title fw-300 text-yellow">Ən xaricdə olan planet</h3>
+            <p class="content">
+              Günəşdən səkkizinci planet olan Neptun, Günəş Sistemində diametri ilə dördüncü ən böyük, kütlə baxımından üçüncü ən böyük və ən sıx nəhəng planetdir. O, Yerdən 17 dəfə daha böyük kütləyə malikdir və yaxın bənzəri olan Uranusdan bir az daha ağırdır. Neptun, Uranusdan daha sıx və fiziki cəhətdən daha kiçikdir, çünki daha böyük kütləsi atmosferinin daha çox cazibə təsiri ilə sıxılmasına səbəb olur. Neptun, Günəş Sisteminin iki "buz nəhəngi" planetlərindən biri olaraq tanınır.
+            </p>
+
+            <button class="learn-more-btn" onclick="viewFacts('neptune-info')">
+              Ətraflı məlumat
+            </button>
+          </div>
+          <div class="stage">
+            <figure class="planet neptune"></figure>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="solar-system-container"
+      id="solar-system"
+      onclick="resetDropdown()"
+    >
+      <div class="blob">Hover</div>
+      <div class="solar-system">
+        <div class="orbit-lines mercury-line"></div>
+        <div class="orbit-lines venus-line"></div>
+        <div class="orbit-lines earth-line"></div>
+        <div class="orbit-lines mars-line"></div>
+        <div class="orbit-lines jupiter-line"></div>
+        <div class="orbit-lines saturn-line"></div>
+        <div class="orbit-lines uranus-line"></div>
+        <div class="orbit-lines neptune-line"></div>
+
+        
+        <div class="solar-side-card flex-center" id="solarSideCard">
+          <div class="solar-side-info" id="sideInfoSun">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Günəş <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Günəşin mərkəzində yaranan enerji nüvə birləşməsi ilə istehsal olunur. Bu böyük enerji miqdarı, dörd hidrogen nüvəsinin birləşərək bir helium nüvəsi yaratması nəticəsində meydana gəlir. Nüvə birləşməsi prosesində, hidrogen atomlarının nüvələri yüksək temperatur və təzyiq altında birləşir və bu proses nəticəsində böyük miqdarda enerji yayılır. Bu enerji, Günəşin işığını və istiliyini təmin edir və Yerin həyat üçün uyğun şəraitdə olmasına səbəb olur.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Günəş həyatının yarısına çatıb. 4.5 milyard yaşında olan Günəş, hidrogen ehtiyatlarının təxminən yarısını yandırıb və hələ də digər 5 milyard il boyu hidrogen yandırmağa davam edəcək qədər ehtiyatı var. Hazırda Günəş sarı cücə ulduzu olaraq tanınır. Bu, onun həyat dövrünün orta mərhələsində olduğunu göstərir. Günəş, hidrogenin heliumla birləşməsi prosesini davam etdirdikcə enerji istehsal edir və bu enerji, Yerin həyat üçün uyğun şəraitdə olmasına kömək edir. Növbəti mərhələdə, hidrogen ehtiyatları bitdikdən sonra Günəş genişlənərək qırmızı nəhəng ulduzuna çevriləcək.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Günəş, Yerdən fərqli olaraq, əks istiqamətdə fırlanır. Yəni, Günəşin fırlanması qərbdən şərqə doğru baş verir, halbuki Yer şərqdən qərbə doğru fırlanır. Bu, Günəşin öz oxu ətrafında dövr etməsi ilə əlaqədar olan fərqli bir fırlanma istiqamətidir. Günəşin fırlanma dövrü Yerin fırlanma dövründən daha uzun olur və bu dövrün müxtəlif hissələrində Günəşin fərqli bölgələri müxtəlif sürətlərlə fırlanır. Bu hadisəyə "diferensial fırlanma" deyilir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Günəşin güclü bir maqnit sahəsi var. Günəşin maqnit enerjisi maqnit fırtınaları zamanı sərbəst buraxıldıqda, bu, Günəşdə günəş partlamalarının baş verməsinə səbəb olur. Günəş partlamalarını Yerdən görərkən, bunlar adətən günəş ləkələri kimi görünür. Günəş ləkələri, Günəşin səthindəki qaranlıq sahələrdir və bunlar maqnit sahəsindəki dəyişikliklər nəticəsində yaranır. Bu ləkələr, Günəşin maqnit sahəsinin gərginliyi və fərqləri ilə əlaqəli olaraq meydana gəlir və zamanla görünüşləri dəyişə bilər. Günəş ləkələri, həmçinin Günəşin fəaliyyətini və enerjisini izləmək üçün mühüm göstəricilərdən biridir.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoMercury">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Merkuri <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Yerdən sonra, Merkuriy Günəş Sistemindəki ikinci ən sıx planetdir. Kiçik ölçüsünə baxmayaraq, Merkuriy çox sıxdır, çünki əsasən ağır metallar və qayalarla tərkib olunur. Planetin daxili, yüksək sıxlığa sahib olan dəmir və nikel kimi metal maddələrdən ibarət olan böyük bir nüvəyə malikdir. Bu səbəbdən, onun sıxlığı Yerin sıxlığına çox yaxındır, amma ölçüləri kiçik olduğu üçün kütləsi nisbətən azdır.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Merkuri, Roma tanrılarının elçisi olan Merkuriya adlandırılmışdır, yunan mifologiyasında isə bu şəxs Hermes olaraq tanınır. Merkurinin Günəş ətrafında fırlanma sürəti və Roma tanrısı olan Merkuriya'nın mesajları çatdırmaqda göstərdiyi sürətə görə bu ad verilmişdir. Merkurinin orbitindəki yüksək sürət, planetin Günəş ətrafında dövr etməsini yalnız 88 günə tamamlamasına səbəb olur, bu da onun sürətini simvolizə edir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Bir zamanlar, Merkurinin orbiti ilə Günəş arasında Vulkan adında bir planetin mövcud olduğuna inanılırdı. Lakin belə bir planetin mövcudluğu heç vaxt tapılmadı. XIX əsrdə astronomlar, Merkurinin orbitindəki kiçik anomaliyaları izah etmək üçün belə bir planetin varlığını təklif etmişdilər. Ancaq daha sonra, bu anomaliyaların əsl səbəbi olaraq digər fiziki proseslər və qüvvələr aşkar edildi. Vulkanın mövcudluğu ilə bağlı heç bir elmi sübut tapılmadığı üçün, bu fikir zamanla təkzib olundu.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Merkuri, il ərzində tam bir dəfə fırlanmayan yeganə planetdir. Əslində, Günəş ətrafında iki dövr etdiyi zaman, Merkuriy üç dəfə fırlanır. Bunun səbəbi, Merkurinin Günəşə demək olar ki, tam tənzimlənmiş bir şəkildə bağlanmasıdır, yəni o, "tidal lock" (gələn enerjinin təsiri ilə üzərindəki cazibə qüvvəsi ilə fırlanmanın müəyyənləşdirilməsi) vəziyyətindədir. Bu, Merkurinin fırlanma dövrünün Günəş ətrafında dövr etmə dövrü ilə uyğunlaşdığı deməkdir. Bu fenomen sayəsində, Merkurinin bir tərəfi həmişə Günəşə tərəf dönərkən, digər tərəfi isə daim qaranlıq qalır.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoVenus">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Venera <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Venusda bir gün, bir ildən daha uzun çəkir. Venusun oxu ətrafında fırlanma sürəti çox yavaşdır, buna görə də bir dövrünü tamamlaması 243 Yerin günü qədər vaxt alır. Lakin Venusun Günəş ətrafında dövr etməsi yalnız 225 Yerin günü çəkir, bu da onu bir ilin, bir gündən qısa etməsinə səbəb olur. Bu xüsusiyyət, Venusun qeyri-adi fırlanma və orbit dövrü səbəbindən yaranır.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Venusda gecə və gündüz arasındakı temperatur fərqi çox azdır. Bunun səbəbi, Günəş küləklərinin planetin səthində çox yavaş hərəkət etməsidir. Venusun sıx atmosferi, xüsusilə karbon dioksid qazının yüksək miqdarı, istiliyi çox yaxşı saxlayır və planetin səthində sabit bir temperaturun qorunmasına kömək edir. Bu atmosfer xüsusiyyətləri nəticəsində, Venusda günün və gecənin arasında temperatur dəyişiklikləri minimaldır, bəzən yalnız bir neçə dərəcə fərq olur.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Venusın çox zəif maqnit sahəsi vardır. Bu, elm adamlarını təəccübləndirib, çünki onlar Venusun maqnit sahəsinin Yerin maqnit sahəsi ilə eyni güclü olacağını gözləyirdilər. Bu zəif maqnit sahəsinin mümkün səbəblərindən biri, Venusun bərk daxili nüvəsinin olmaması və ya nüvəsinin soyuma prosesinin baş verməməsidir. Yerin maqnit sahəsi, onun bərk daxili nüvəsinin hərəkətindən və soyuma proseslərindən yaranır, amma Venusda belə bir vəziyyət olmadığı üçün maqnit sahəsi çox zəifdir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Venus, Günəş ətrafında bir elips üzrə hərəkət edir, amma onun orbiti, Günəş Sistemi içərisində bütün planetlərdən ən yaxın şəkildə dairəyə bənzəyir. Bu, deməkdir ki, Venusun orbiti çox kiçik bir oval şəklindədir və digər planetlərin orbitlərindən daha az deformasiya olunub. Bu xüsusiyyət, Venusun orbitini daha stabil və çox yaxın bir şəkildə dairəvi edir, bu da onun hərəkətinin daha təxminən eyni məsafədə olmasına səbəb olur.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoEarth">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Yer <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Bir vaxtlar Yer, kainatın mərkəzi olduğu düşünülürdü. 2000 il ərzində qədim astronomlar, Yerin sabit olduğunu və digər göy cisimlərinin onun ətrafında dairəvi orbitlərdə hərəkət etdiyini inanırdılar. Bu fikir, Yunan filosofu Ptolemeyin "Geosentrik model"inə əsaslanırdı və o dövrün astronomik bilikləri ilə uyğun gəlirdi. Lakin, 16-cı əsrdə Nikolay Kopernik, Yerin kainatın mərkəzi olmadığını və əslində Günəşin ətrafında dövr etdiyini təklif edərək bu nəzəriyyəni dəyişdirdi. Bu, astronomiyanın inkişafında inqilabi bir dönüş nöqtəsi oldu.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Yerin suyu ilkin olaraq planetin daxilində sıxılmış vəziyyətdə idi. Zamanla, Yerin vulkanik fəaliyyəti nəticəsində bu su səthə çıxdı. Yerin ilkin dövrlərində, planetin isti səthi və aktiv vulkanizmi, suyun buxarlanaraq atmosferə çıxmasına səbəb olmuşdu. Sonra, bu buxar kondensasiya olaraq suya çevrildi və yağışlar şəklində Yerə düşərək suyun böyük hissəsi okeanlara və digər su hövzələrinə toplandı. Bu proses, Yer üzərində həyatın inkişafı üçün vacib olan suyun yaranmasına və dağılımına səbəb oldu.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Yer üzərindəki ən yüksək nöqtə, 8.8 km hündürlüyə çatır olan Everest Dağıdır. Everest, Himalay dağ silsiləsində yerləşir və dünya üzərindəki ən yüksək dağ zirvəsi olaraq tanınır. Bu dağ, Nepal və Çin sərhədində yerləşir və dağçılar üçün böyük bir çətinlik və hədəf olmuşdur. Everestin zirvəsinə ilk dəfə 1953-cü ildə Sir Edmund Hillary və Tenzing Norgay tərəfindən çıxılmışdır.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Yer üzərindəki ən aşağı nöqtə, Challenger Deep adlanır və dəniz səviyyəsindən 10.9 km dərinlikdədir. Bu nöqtə, dünyanın ən dərin okean çuxuru olan Mariana Çöküntüsünün bir hissəsidir və Pasifik Okeanında yerləşir. Challenger Deep, Everest Dağının zirvəsindən daha dərin olduğu üçün Yer üzərindəki ən aşağı nöqtə hesab edilir. Bu çuxur, okeanın ən dərin hissəsi olaraq, hələ də araşdırılmağa davam edən bir bölgədir.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoMars">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Mars <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Mars, Yer xaricində qütb buzlaqları olan tək digər planetdir. Şimal qütbü "Planum Boreum", cənub qütbü isə "Planum Australe" adlanır. Marsın qütblərində buz kütlələri mövcuddur və bu buzlar, əsasən suyun buz halında olan formasıdır. Həmçinin, Marsın buzlaqlarının altında su buzu da aşkar edilmişdir. Bu, planetin keçmişində və ya indiki dövründə su mövcudluğu barədə əlavə məlumatlar əldə etməyə imkan yaradır və Marsda həyatın mövcud olub-olmaması ilə bağlı tədqiqatları stimullaşdırır.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Marsda Yerə bənzər mövsümlər var, lakin onlar iki dəfə daha uzun sürür. Bunun səbəbi, Marsın oxu ətrafında təxminən 25.19 dərəcəlik bir əyilməyə sahib olmasıdır ki, bu da Yerin oxu ətrafındakı əyilmə (22.5 dərəcə) ilə oxşardır. Bu əyilmə Marsda mövsümlərin yaranmasına səbəb olur, amma Marsın orbitinin daha böyük olduğu və ili Yerinkindən daha uzun olduğu üçün hər mövsüm Yerinkindən iki dəfə uzun olur. Marsın mövsüm dövrləri, planetin yer səthindəki şərtlərin dəyişməsinə və iqlim dəyişikliyinə təsir edir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Marsın maqnit sahəsi yoxdur, amma bəzi elm adamları hesab edirlər ki, Marsın keçmişdə, təxminən 4 milyard il əvvəl, maqnit sahəsi olub. Bu, Marsın əvvəlki dövrlərdə daha aktiv bir daxili nüvəyə və maqnit sahəsinə sahib olduğu ehtimalını gücləndirir. Lakin zamanla, planetin daxili fəaliyyətləri azalıb və nəticədə maqnit sahəsi itmişdir. Bu mövzu, Marsın keçmiş geoloji tarixini və planetin həyat potensialını araşdıran tədqiqatların bir hissəsidir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Marsın orbiti, səkkiz planetdən ən ekzentrik olanıdır. Bu, Marsın orbitinin digər planetlərə nisbətən ən az dairəvi olduğunu göstərir. Marsın orbitindəki ekzentriklik, onun Günəşə olan məsafəsinin dövr ərzində daha çox dəyişməsinə səbəb olur. Yəni, Mars Günəşə ən yaxın olduğu zaman (perihelion) və ən uzaq olduğu zaman (aphelion) arasında böyük fərq var. Bu xüsusiyyət, Marsın iqliminə və mövsümi dəyişikliklərinə təsir edir.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoJupiter">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Yupiter <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Yupiter, səkkiz planetdən ən qısa gündüzə sahibdir. Bu planet çox sürətli dönür və öz oxu ətrafında bir dövrü yalnız 9 saat 55 dəqiqə ərzində tamamlayır. Bu sürətli fırlanma, Yupiterin oblate (uzunlamasına) formasının yaranmasına səbəb olur, çünki planetin dövr etməsi ona sıxılma və düzləşmə təsiri göstərir. Bu effekt nəticəsində Yupiterin ekvatoru, qütblərinə nisbətən daha genişdir, yəni planetin forması tam olaraq sferik deyil, əksinə ekvator ətrafında şişkin bir şəkildədir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Yupiterin çox özəl bir bulud təbəqəsi var. Planetin yuxarı atmosferi, ammonyak kristalları, kükürd və bu iki birləşmənin qarışığından ibarət olan bulud zolaqlarına və kəmərlərinə bölünür. Bu bulud zolaqları Yupiterin xarici atmosferindəki müxtəlif temperatur və kimyəvi tərkib fərqliliklərinə görə yaranır. Yupiterin buludları, planetin müxtəlif zonalarını və qırmızı ləkələrini yaradan böyük atmosfer hadisələrini müşahidə etmək üçün astronomlara mühüm məlumatlar verir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Əgər Yupiter 80 dəfə daha kütləli olsaydı, onun nüvə birləşməsi baş verərdi. Belə bir halda, Yupiter planet deyil, bir ulduz olardı. Nüvə birləşməsi, ulduzların enerjisini təmin edən prosesdir və bu, hidrogen atomlarının helium atomlarına çevrilməsi ilə baş verir. Yupiterin kütləsi, bu prosesin başlaması üçün lazımi şərtləri təmin etməyə yetərli deyil, amma kütləsi daha da artsaydı, bir ulduz kimi parlamağa başlaya bilərdi. Bu, Yupiterin "kəsilmiş" bir ulduz olduğu və ya "yüksəldilməsi" ilə nəticələnə biləcək bir vəziyyətdir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Yupiter, Yer və Mars kimi digər planetlərdə olduğu kimi mövsümlər yaşamır. Bunun səbəbi, Yupiterin oxunun yalnız 3.13 dərəcə əyilməsidir. Yupiterin oxu çox az əyildiyi üçün, onun iqlimi və atmosferi, planetin mövsümi dəyişikliklərə məruz qalmasını təmin etmir. Digər planetlərdə olduğu kimi, Yupiterin mövsümləri, oxunun daha böyük əyilməsi və orbitin xüsusiyyətləri ilə əlaqəli deyil.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoSaturn">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Saturn <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Roma mifologiyasında Saturn, Yupiterin atası, tanrıların kralıdır. Bu əlaqə, Saturn və Yupiter planetlərinin ölçü və tərkib kimi bir çox cəhətdən bənzəməsi ilə məna kəsb edir. Yunan mifologiyasında isə Saturnun qarşılığı Cronus olaraq bilinər. Bu mifoloji əlaqə, hər iki planetin böyük kütləsi və tərkibi baxımından oxşarlıqlarını simvollaşdırır və onları tanrıların nəsli ilə əlaqələndirir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Saturn, Günəşdən aldığı enerjidən daha çox enerji verir. Bu qeyri-adi xüsusiyyətin, planetin cazibə sıxılması ilə yaranan enerji və atmosferindəki böyük miqdarda heliumun sürtünməsi nəticəsində meydana gəldiyi güman edilir. Saturnun daxili sıxılması, planetin özünə daxil olan enerjini çıxarmağa kömək edir, eyni zamanda heliumun hərəkəti və digər daxili proseslər də bu enerjinin əmələ gəlməsinə səbəb olur. Bu, Saturnun özünəməxsus enerji balansına və qeyri-adi istilik yayılmasına səbəb olur.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Saturn, günəş sistemi içərisindəki digər planetlərə nisbətən ən sürətli küləklərə sahibdir. Bu küləklər təxminən saatda 1,800 km sürətlə ölçülüb. Saturnun güclü atmosferindəki bu sürətli küləklər, planetin böyük ölçüsü və mürəkkəb hava şəraiti ilə əlaqədardır. Küləklər əsasən Saturnun ekvatoru ətrafında ən sürətli hərəkət edir və planetin kəmər sistemlərini və müxtəlif atmosfer hadisələrini yaratmaqda mühüm rol oynayır.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Saturn, səkkiz planetin ən düz olanıdır. Onun qütb diametri, ekvator diametrinin 90%-ni təşkil edir, bu da onu bütün planetlər arasında ən düz edən xüsusiyyətdir. Saturnun sürətli fırlanması səbəbindən ekvator bölgəsində sıxılma yaranır, nəticədə planetin ekvatoru qütblərinə nisbətən daha geniş olur. Bu xüsusiyyət, Saturnun oblate (uzunlamasına) formasını və düzləşmiş strukturunu təmin edir.
+              </p>
+            </div>
+          </div>
+
+          <div class="solar-side-info hidden" id="sideInfoUranus">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Uran <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Uranus öz oxu ətrafında hər 17 saat 14 dəqiqədə bir dövrə vurur. Venus kimi, Uranus da retroqrad hərəkət edir, yəni Yerin və digər altı planetin hərəkətinin əksinə, başqa sözlə, tərs istiqamətdə fırlanır. Bu qeyri-adi fırlanma xüsusiyyəti, Uranusun unikal daxili strukturunu və planetin yaranış prosesini əks etdirə bilər. Retroqrad fırlanma, həmçinin planetin əyilmiş oxunun və orbitinin xüsusiyyətləri ilə əlaqələndirilir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Uranusun qeyri-adi əyilməsinin səbəbi bir toqquşma ola bilər. Bu nəzəriyyəyə görə, Yer ölçüsündə bir planet Uranusla toqquşmuş və bu, planetin oxunun kəskin şəkildə əyilməsinə səbəb olmuşdur. Belə bir toqquşma, Uranusun fırlanma oxunun bu qədər böyük bir bucaqla əyilməsini izah edir. Hətta bu əyilmə, planetin atmosferi və ümumi hərəkətinin də xüsusi şəkildə formalaşmasına təsir etmişdir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Uranusun kütləsi, Yerin kütləsinin təxminən 14.5 qatıdır, bu da onu xarici günəş sistemindəki dörd qaz nəhəngi arasında ən yüngül edən xüsusiyyətdir. Uranus, həmçinin çoxlu qazlardan ibarət olan bir planet olduğu üçün onun nisbətən daha az kütləsi, planetin ümumi ölçüsünə və strukturuna təsir edir. Bu, Uranusun Neptun ilə oxşar tərkibə malik olmasına baxmayaraq, daha kiçik və daha yüngül olmasına səbəb olur.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Voyager 2, Uranusdan keçən yeganə kosmik gəmidir. Bu hadisə 1986-cı ildə baş verdi və kosmik gəmi, planetdən təxminən 81,500 km məsafədə keçdi. Bu missiya, planetin, onun halqa sisteminin və ətrafında dövr edən aylarının ilk yaxın çəkilişlərini qaytardı. Voyager 2-nin bu qeyri-adi gedişi, Uranusun tədqiqi üçün mühüm addım oldu və planet haqqında dərin məlumatlar toplamağa kömək etdi.
+              </p>
+            </div>
+          </div>
+          <div class="solar-side-info hidden" id="sideInfoNeptune">
+            <div class="solar-header-container">
+              <div class="close-button" onclick="closeSidePanel()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <h3>Neptun <span class="text-yellow">Faktlar</span></h3>
+            </div>
+
+            <div class="side-points">
+              <div class="fact-count">1</div>
+              <p>
+                Neptun da "Kiçik Qaranlıq Ləkə" adlanan ikinci bir fırtınaya sahibdir. Bu fırtına, Yerin ayı ilə təxminən eyni ölçüdədir. Kiçik Qaranlıq Ləkə, Neptunun atmosferindəki güclü küləklər və dəyişkən hava şəraiti nəticəsində yaranan bir xüsusiyyətdir. Bu fırtına, planetin qeyri-adi və mürəkkəb hava şərtlərinin bir nümunəsidir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">2</div>
+              <p>
+                Neptun öz oxu ətrafında çox sürətlə fırlanır. Planetin ekvator buludları bir dövrə vurmaq üçün 18 saat tələb edir. Bunun səbəbi, Neptunun möhkəm bir cismi olmamasıdır. Neptun, qaz və maye şəklində olan bir planet olduğu üçün, onun atmosferi və buludları sərt bir səthə bağlanmamışdır, bu da planetin sürətli və qeyri-bərabər fırlanmasına səbəb olur. Bu sürət, Neptunun ümumi hərəkətinə və hava şəraitinin dinamikasına təsir edir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">3</div>
+              <p>
+                Digər xarici planetlər kimi, Neptun da halqa sisteminə malikdir, amma onun halqaları çox zəifdir. Bu halqaların böyük ehtimalla buz hissəciklərindən və toz dənəciklərindən ibarət olduğu düşünülür, və onların üzərində karbon əsaslı maddə qatları mövcuddur. Neptunun halqaları, planetin uzaq mövqeyi və zəif işıq şərtləri səbəbindən çox da aydın görünmür, amma onlar yenə də planetin atmosferi və strukturunun maraqlı bir hissəsini təşkil edir.
+              </p>
+            </div>
+            <div class="side-points">
+              <div class="fact-count">4</div>
+              <p>
+                Neptun üzərindəki iqlim son dərəcə aktivdir. Onun yuxarı atmosferində böyük fırtınalar baş verir və yüksək sürətli günəş küləkləri planet ətrafında saniyədə 1,340 km-ə qədər hərəkət edir. Ən böyük fırtına 1989-cu ildə meydana gələn Böyük Qaranlıq Ləkə idi və təxminən beş il davam etdi. Bu fırtına, Neptunun atmosferindəki güclü dinamiklər və mürəkkəb hava şəraiti ilə əlaqədardır və planetin kənar bölgələrində uzun müddət görünən bir xüsusiyyət olaraq qalmışdır.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="solar-sun" onclick="openSidePanel('sideInfoSun')">
+          <img src="images/sun.png" alt="image of sun" >
+        </figure>
+
+        <figure
+          class="solar-mercury"
+          onclick="openSidePanel('sideInfoMercury')"
+        >
+          <img src="images/mercury.png" alt="mercury is the first planet" >
+        </figure>
+
+        <figure class="solar-venus" onclick="openSidePanel('sideInfoVenus')">
+          <img src="images/venus.png" alt="venus is the second planet" >
+        </figure>
+
+        <figure class="solar-earth" onclick="openSidePanel('sideInfoEarth')">
+          <img src="images/earth.png" alt="earth is the third planet" >
+        </figure>
+
+        <figure class="solar-mars" onclick="openSidePanel('sideInfoMars')">
+          <img src="images/mars.png" alt="mars is the fourth planet" >
+        </figure>
+
+        <figure
+          class="solar-jupiter"
+          onclick="openSidePanel('sideInfoJupiter')"
+        >
+          <img src="images/jupiter.png" alt="jupiter is the fifth planet" >
+        </figure>
+
+        <figure class="solar-saturn" onclick="openSidePanel('sideInfoSaturn')">
+          <img src="images/saturn.png" alt="saturn is the sixth planet" >
+        </figure>
+
+        <figure class="solar-uranus" onclick="openSidePanel('sideInfoUranus')">
+          <img src="images/uranus.png" alt="uranus is the seventh planet" >
+        </figure>
+        <figure
+          class="solar-neptune"
+          onclick="openSidePanel('sideInfoNeptune')"
+        >
+          <img src="images/neptune.png" alt="neptune is the eighth planet" >
+        </figure>
+      </div>
+    </section>
+
+
+    <section class="planet-info" id="planetData" onclick="resetDropdown()">
+      <div class="hidden" id="neptune-info">
+        <div class="planet-info-grid">
+          <div class="fact-image">
+            <img src="/images/neptune1.jpg"  alt="" >
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">1</div>
+            <h4>Qazlı</h4>
+            <p>
+              Neptunun atmosferi əsasən molekulyar hidrogen, atomik helium və metan qazlarından ibarətdir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">2</div>
+            <h4>Oraya Bir Səyahət </h4>
+            <p>
+              Voyager 2, Neptunu ziyarət edən yeganə kosmik gəmisidir. Heç bir kosmik gəmi bu uzaq planeti uzun müddət və yaxından öyrənmək üçün onun ətrafında dövr etməyib.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/neptune2.png"  alt="">
+          </div>
+          <div class="fact-image">
+            <img src="/images/neptune3.jpg"  alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>Zəif Üzüklər</h4>
+            <p>
+              Neptun ən azı beş əsas üzüyə və daha dörd üzüklü arka sahibdir. Bu arka, yaxınlıqdakı bir ayın cazibəsi ilə yaranmış olan toz və qalıq toplarından ibarətdir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Maraqlı Bir Fakt</h4>
+            <p>
+              Cüce planet Pluto'nun eliptik orbitinə görə, Pluto bəzən Neptundan daha yaxın olur, yəni Günəşə (və bizə) daha yaxın olur.
+            </p>
+          </div>
+
+          <div class="fact-image">
+            <img src="/images/neptune4.jpg" alt="" >
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="uranus-info">
+        <div class="planet-info-grid">
+          <div class="fact-image">
+            <img src="/images/uranus1.png" alt="" >
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">1</div>
+            <h4>Qazlı</h4>
+            <p>
+              Uranus'un atmosferi əsasən molekulyar hidrogen və atomik heliumdan ibarətdir, kiçik miqdarda isə metan mövcuddur.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">2</div>
+            <h4>Bir Az Tənha</h4>
+            <p>
+              Voyager 2, Uranus'u yaxın məsafədən keçən yeganə kosmik gəmidir. Heç bir kosmik gəmi bu uzaq planeti uzun müddət və yaxından öyrənmək üçün onun ətrafında orbitə dönməmişdir.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/uranus4.jpg" alt="">
+          </div>
+          <div class="fact-image">
+            <img src="/images/uranus2.png" alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>Günlər Qıs illər Uzun</h4>
+            <p>
+              Uranın bir dəfə fırlanması (bir Uran günüdür) təxminən 17 saat çəkir və Günəş ətrafında bir dövrü tamamlaması (bir Uran ili) təxminən 84 Yer ili çəkir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Maraqlı Fakt</h4>
+            <p>
+              Venüs kimi, Uran da şərqdən qərbə doğru fırlanır. Lakin Uran öz tərəfinə doğru fırlanması ilə unikaldır.
+            </p>
+          </div>
+
+          <div class="fact-image">
+            <img src="/images/uranus3.png"alt="" >
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="saturn-info">
+        <div class="planet-info-grid">
+          <div class="fact-image">
+            <img src="/images/saturn4.jpg" alt="">
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">1</div>
+            <h4>İsti Hava</h4>
+            <p>
+              Saturnun atmosferi əsasən hidrogen (H2) və heliumdan (He) ibarətdir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">2</div>
+            <h4>Nadir Məkan</h4>
+            <p>
+              Saturna çox az sayda missiya səfər edib: Pioneer 11 və Voyagers 1 və 2 sadəcə yanından keçib. Amma Cassini 2004-dən 2017-yə qədər Saturna 294 dəfə orbitə daxil olub.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/saturn2.jpg" alt="" >
+          </div>
+          <div class="fact-image">
+            <img src="/images/saturn1.png" alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>Qısa Gün Uzun İl</h4>
+            <p>
+              Saturn öz oxu ətrafında bir dəfə fırlanmaq üçün təxminən 10.7 saat (dəqiq olaraq heç kim bilmir) vaxt sərf edir, bu da bir "Saturn günü" hesab olunur. Günəş ətrafında tam dövr etmək isə Saturn üçün 29 Yer ilinə bərabərdir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Yerdən Biraz Əlavə Olunma</h4>
+            <p>
+              Saturnun kütləsinin təxminən iki tonu Yer kürəsindən gəlmişdir — 2017-ci ildə Cassini kosmik aparatı qəsdən Saturnun atmosferində buxarlandırılmışdır.
+            </p>
+          </div>
+
+          <div class="fact-image">
+            <img src="/images/saturn3.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="jupiter-info">
+        <div class="planet-info-grid">
+          <div class="fact-image">
+            <img src="/images/jupiter1.jpg" alt="">
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">1</div>
+            <h4>Güclü Tufan</h4>
+            <p>
+              Yupiterin Böyük Qırmızı Ləkəsi, təxminən Yer kürəsinin iki misli böyüklükdə olan və əsrdən artıq bir müddətdir davam edən nəhəng bir fırtınadır.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">2</div>
+            <h4>Massiv Dünya İşıq Elementlər</h4>
+            <p>
+              Yupiterin atmosferi əsasən hidrogen (H2) və heliumdan (He) ibarətdir.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/jupiter2.jpg" alt="">
+          </div>
+          <div class="fact-image">
+            <img src="/images/jupiter3.jpg" alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>İçəridə Nə Var</h4>
+            <p>
+              Yupiter qaz nəhəngi olduğu üçün Yer kimi bir səthə malik deyil. Əgər onun möhkəm daxili nüvəsi varsa, ehtimal ki, bu nüvə yalnız Yerin ölçüsündədir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Yupiteri Kəşf Etmək</h4>
+            <p>
+              Yupiteri doqquz kosmik gəmi ziyarət edib. Yeddi gəmi yalnız Yupiterin yaxınından uçub, ikisi isə qaz nəhəngini orbitə alıb. Ən sonuncusu olan Juno, 2016-cı ildə Yupiterə çatıb.
+            </p>
+          </div>
+
+          <div class="fact-image">
+            <img src="/images/jupiter4.jpg" alt="" >
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="mars-info">
+        <div class="planet-info-grid">
+          <div class="fact-image">
+            <img src="/images/mars1.png" alt="">
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">1</div>
+            <h4>Sərt Relyeflər</h4>
+            <p>
+              Mars daşlı bir planetdir. Onun möhkəm səthi vulkanlar, çırpılmalar, küləklər, qabıq hərəkətləri və kimyəvi reaksiyalarla dəyişdirilib.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">2</div>
+            <h4>Kosmik Gəmi</h4>
+            <p>
+              Marsın incə atmosferi əsasən karbon dioksid (CO2), argon (Ar), azot (N2) və az miqdarda oksigen və su buxarından ibarətdir.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/mars2.png" alt="">
+          </div>
+          <div class="fact-image">
+            <img src="/images/mars3.jpg" alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>Bir Çox Missiya</h4>
+            <p>
+              Bir neçə missiya bu planeti ziyarət edib, bunlar arasında keçid uçuşları, orbiterlər və səthdəki roverlər var. Həqiqi Mars missiyasının ilk uğuru 1965-ci ildəki Mariner 4 keçid uçuşu idi.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Paslanmış Planet</h4>
+            <p>
+              Mars, Qırmızı Planet olaraq bilinən bir planetdir, çünki Mars torpağındakı dəmir mineralları oksidləşir (paslanır), bu da torpağı və atmosferi qırmızı rəngə çevirir.
+            </p>
+          </div>
+
+          <div class="fact-image">
+            <img src="/images/mars4.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="earth-info">
+        <div class="planet-info-grid">
+          <div class="fact-image">
+            <img src="/images/earth2.png" alt="" >
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">1</div>
+            <h4>Sıxılmış Bir Kürə</h4>
+            <p>
+              Yer fırladıqca cazibə qüvvəsi planetimizin mərkəzinə doğru yönəlir və mərkəzdən uzaqlaşdıran fırlanma qüvvəsi xarici tərəfə itələyir. Lakin bu cazibəyə qarşı çıxan qüvvə Yerin oxuna dikdir və Yerin oxu meylli olduğu üçün ekvator boyunca bu qüvvə cazibə qüvvəsi ilə qarşı çıxmır.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">2</div>
+            <h4>Cazibə Qüvvəsi Vahid Deyil</h4>
+            <p>
+              Əgər Yer mükəmməl bir kürə olsaydı, cazibə sahəsi hər yerdə eyni olardı. Lakin gerçəkdə, planetin səthi qabarıqdır və su axını, buz sürüşməsi və Yerin qabığının altındakı tektonik plitələrin hərəkəti cazibənin təsirini dəyişdirir.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/earth3.png" alt="" >
+          </div>
+          <div class="fact-image">
+            <img src="/images/earth4.png" alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>Yer Əvvəllər Bənövşəyi Olub</h4>
+            <p>
+              Alimlər inanır ki, qədim mikroblar günəşin şüalarını tutmaq üçün xlorofildən başqa bir molekul istifadə etmiş ola bilərdi, bu da orqanizmlərə bənövşəyi rəng vermişdir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Tektonik Lövhələri Olan Planet</h4>
+            <p>
+              Yer kürəsinin xarici qabığında bir neçə bölgə var ki, bunlara tektonik lövhələr deyilir. Bunun altında isə bu lövhələrin hərəkət etməsinə səbəb olan mavi iç qatı var və bu lövhələr bir-birinə çırpılır.
+            </p>
+          </div>
+
+          <div class="fact-image">
+            <img src="/images/earth1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="venus-info">
+        <div class="planet-info-grid">
+          <div class="facts">
+            <div class="fact-count">1</div>
+            <h4>Zəhərli Əkiz</h4>
+            <p>
+              Venus tez-tez "Yerin ikizi" adlandırılır, çünki onlar ölçü və quruluş baxımından bənzərdir, amma Venusun səthində ekstremal istilik və sıx, zəhərli atmosfer var. Əgər Günəş adi bir qapı boyda olsaydı, Yer və Venus hər biri təxminən bir sikkə boyunda olardı.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/venus1.jfif" alt="">
+          </div>
+          <div class="fact-image">
+            <img src="/images/venus2.png" alt="" >
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">2</div>
+            <h4>Uzun Günlər Qısa İllər</h4>
+            <p>
+              Venus çox yavaş dövr edir - Venusda bir gün 243 Yer günü davam edir. Lakin planet, Yerə nisbətən daha sürətlə Günəş ətrafında dövr edir, buna görə də Venusda bir il yalnız təxminən 225 Yer günü çəkir. Beləliklə, Venusda bir gün, bir ildən daha uzun çəkir!
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>Müxtəlif Ərazi</h4>
+            <p>
+              Venusda möhkəm bir səth var və bu səthdə kubik vulkanlar, yarıqlar və dağlar yerləşir. Eyni zamanda, geniş vulkanik düzənliklər və geniş, yarıqla örtülmüş plato-lar mövcuddur.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/venus3.jpg" alt="" >
+          </div>
+          <div class="fact-image">
+            <img src="/images/venus4.jpg" alt="">
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Qaçan İstixana Effekti</h4>
+            <p>
+              Venusun qalın atmosferi istiliyi tutaraq qaçan bir istixana effekti yaradır - bu, onu Günəş sistemindəki ən isti planet edir və səth temperaturu qurğuşunu əridəcək qədər yüksəkdir. İstixana effekti, Venusun atmosfer təsiri olmadan olacağından təxminən 700°F (390°C) daha isti olmasına səbəb olur.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden" id="mercury-info">
+        <div class="planet-info-grid">
+          <div class="facts">
+            <div class="fact-count">1</div>
+            <h4>Ən Sürətli Planet</h4>
+            <p>
+              Merkuri bizim Günəş sistemindəki ən sürətli planetdir - kosmosda təxminən saniyədə 47 kilometr (29 mil) sürətlə hərəkət edir. Bir planetin Günəşə nə qədər yaxın olması, onun sürətini artırır. Çünki Merkuri ən sürətli planetdir və Günəş ətrafında hərəkət etməli olduğu məsafə ən qısa olduğu üçün, Günəş sistemindəki bütün planetlər arasında ən qısa ili - 88 günü tamamlayır.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/mercury1.jpg" alt="">
+          </div>
+          <div class="fact-image">
+            <img src="/images/mercury2.jpg" alt="" >
+          </div>
+          <div class="facts" id="fact2">
+            <div class="fact-count">2</div>
+            <h4>Kobud Səthi</h4>
+            <p>
+              Mercury, daşlı bir planetdir, həmçinin yer planeti olaraq da bilinər. Mercury'nin səthi bərk və kraterlərlə doludur, bu, Yerin Ayına bənzəyir. Bu planetin səthi, bəzən asteroid və kometaların çarpması nəticəsində yaranmış böyük kraterlərdən ibarətdir. Yerin Ayına bənzəməsi, onun da çox təsirli və dəyişikliklərə məruz qalmış bir səthə sahib olmasından irəli gəlir.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact-count">3</div>
+            <h4>İncə Atmosfer</h4>
+            <p>
+              Merkurinin incə atmosferi, ya da ekzofere, əsasən oksigen (O2), natrium (Na), hidrogen (H2), helium (He) və kaliumdan (K) ibarətdir.
+            </p>
+          </div>
+          <div class="fact-image">
+            <img src="/images/mercury3.jpg" alt="" >
+          </div>
+          <div class="fact-image">
+            <img src="/images/mercury4.jpeg" alt="" >
+          </div>
+          <div class="facts">
+            <div class="fact-count">4</div>
+            <h4>Böyük Günəş</h4>
+            <p>
+              Merkuriynin səthində, Günəşə ən yaxın nöqtəsinə yaxınlaşdıqda, bizim ulduzumuz Yerdən üç dəfədən çox daha böyük görünərdi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section
+      class="apollo-section flex-center"
+      id="apollo11"
+      onclick="resetDropdown()"
+    >
+      <div class="space-event">
+        <div class="space-item">
+          <img src="/images/apollo-2.jpg" alt="space-image" >
+        </div>
+        <div class="space-item">
+          <img src="/images/apollo-1.jpg" alt="space-image" >
+        </div>
+        <div class="space-item space-info">
+          <h3 class="text-yellow">Apollo 11</h3>
+          <p>
+            Apollo 11, Amerika'nın Aya ilk insanları endirdiği kosmik uçuş idi. Komandir Neil Armstrong və Ay modulunun pilotu Buzz Aldrin 20 iyul 1969-cu ildə Apollo Ay Modulu Eagle-i Ayın səthinə endirdi və Armstrong, 21 iyulda saat 02:56 UTC-də Ayın səthinə ilk adım atan şəxs oldu. Bu, altı saat 39 dəqiqə sonra baş verdi.
+          </p>
+        </div>
+        <div class="space-item">
+          <img src="/images/apollo-3.jpg" alt="space-image" >
+        </div>
+        <div class="space-item">
+          <img src="/images/apollo-4.jpg" alt="space-image" >
+        </div>
+        <div class="space-item">
+          <img src="/images/apollo-5.jpg" alt="space-image" >
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section class="flex-center" id="metrics" onclick="resetDropdown()">
+      <div class="planet-metric">
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter seven-letter">M</div>
+            <div class="planet-letter seven-letter">E</div>
+            <div class="planet-letter seven-letter">R</div>
+            <div class="planet-letter seven-letter">K</div>
+            <div class="planet-letter seven-letter">U</div>
+            <div class="planet-letter seven-letter">R</div>
+            <div class="planet-letter seven-letter">İ</div>
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>0</p>
+            </div>
+            <div class="gravity">
+              <h5>Cazibə qüvvəsi</h5>
+              <p>3.7m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>1407.6 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>88.0 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter six-letter">V</div>
+            <div class="planet-letter six-letter">E</div>
+            <div class="planet-letter six-letter">N</div>
+            <div class="planet-letter six-letter">E</div>
+            <div class="planet-letter six-letter">R</div>
+            <div class="planet-letter six-letter">A</div>
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>0</p>
+            </div>
+            <div class="gravity">
+              <h5>Cazibə qüvvəsi</h5>
+              <p>8.9m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>5832.5 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>224.7 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter five-letter">Y</div>
+            <div class="planet-letter five-letter">E</div>
+            <div class="planet-letter five-letter">R</div>
+           
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>1</p>
+            </div>
+            <div class="gravity">
+              <h5>Cazibə qüvvəsi</h5>
+              <p>9.8m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>23.9 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>365.2 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter four-letter">M</div>
+            <div class="planet-letter four-letter">A</div>
+            <div class="planet-letter four-letter">R</div>
+            <div class="planet-letter four-letter">S</div>
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>2</p>
+            </div>
+            <div class="gravity">
+              <h5> Cazibə qüvvəsi</h5>
+              <p>3.7m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>24.6 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>687.0 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter seven-letter">Y</div>
+            <div class="planet-letter seven-letter">U</div>
+            <div class="planet-letter seven-letter">P</div>
+            <div class="planet-letter seven-letter">I</div>
+            <div class="planet-letter seven-letter">T</div>
+            <div class="planet-letter seven-letter">E</div>
+            <div class="planet-letter seven-letter">R</div>
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>79</p>
+            </div>
+            <div class="gravity">
+              <h5> Cazibə qüvvəsi</h5>
+              <p>23.1m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>9.9 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>4331 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center saturn-icon">
+            <div class="planet-letter six-letter">S</div>
+            <div class="planet-letter six-letter">A</div>
+            <div class="planet-letter six-letter">T</div>
+            <div class="planet-letter six-letter">U</div>
+            <div class="planet-letter six-letter">R</div>
+            <div class="planet-letter six-letter">N</div>
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>82</p>
+            </div>
+            <div class="gravity">
+              <h5> Cazibə qüvvəsi</h5>
+              <p>9.0m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>10.7 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>10,747 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter six-letter">U</div>
+            <div class="planet-letter six-letter">R</div>
+            <div class="planet-letter six-letter">A</div>
+            <div class="planet-letter six-letter">N</div>
+        
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>27</p>
+            </div>
+            <div class="gravity">
+              <h5>Cazibə qüvvəsi</h5>
+              <p>8.7m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>17.2 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>30,589 gün</p>
+            </div>
+          </div>
+        </div>
+        <div class="planet-card">
+          <div class="planet-icon flex-center">
+            <div class="planet-letter seven-letter">N</div>
+            <div class="planet-letter seven-letter">E</div>
+            <div class="planet-letter seven-letter">P</div>
+            <div class="planet-letter seven-letter">T</div>
+            <div class="planet-letter seven-letter">U</div>
+            <div class="planet-letter seven-letter">N</div>
+
+          </div>
+          <div class="metrics">
+            <div class="moons">
+              <h5>Aylar</h5>
+              <p>14</p>
+            </div>
+            <div class="gravity">
+              <h5>Cazibə qüvvəsi</h5>
+              <p>11.0m/s<sup>2</sup></p>
+            </div>
+
+            <div class="rotation">
+              <h5>Dönmə müddəti</h5>
+              <p>16.1 saat</p>
+            </div>
+
+            <div class="orbital">
+              <h5>Orbital müddət</h5>
+              <p>59,800 gün</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer onclick="resetDropdown()">
+      <div class="footer-content">
+        <h3 class="fw-300">
+          <a href="#home" class="logo"
+            >Planetlər<span class="text-yellow fw-700">Aləmi</span></a
+          >
+        </h3>
+        <div class="footer-links-group fw-300">
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(1)"
+            >Merkuri</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(2)"
+            >Venera</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(3)"
+            >Yer</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(4)"
+            >Mars</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(5)"
+            >Yupiter</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(6)"
+            >Saturn</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(7)"
+            >Uran</a
+          >
+          <a
+            href="#planet-carousel"
+            class="footer-link"
+            onclick="currentSlide(8)"
+            >Neptun</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
